@@ -4,3 +4,10 @@ ui_*
 Makefile
 BLDC_Tool.app
 BLDC_Tool
+
+qrc_resources.cpp
+*.user
+BLDC_Tool.pro.user.18
+*.2-pre1
+BLDC_Tool.pro
+BLDC_Tool.pro

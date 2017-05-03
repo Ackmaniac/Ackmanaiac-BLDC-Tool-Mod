@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1340</width>
-    <height>795</height>
+    <width>1513</width>
+    <height>875</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -63,6 +63,9 @@
                 <layout class="QHBoxLayout" name="horizontalLayout_34">
                  <item>
                   <widget class="QRadioButton" name="mcconfTypeBldcButton">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BLDC = for Brushless DC Motors.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>BLDC</string>
                    </property>
@@ -73,6 +76,9 @@
                  </item>
                  <item>
                   <widget class="QRadioButton" name="mcconfTypeDcButton">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DC = for Brushed DC Motors. The 2 outer phase wires (wires between the VESC and the motor) needs to be connected. the wire in the middle is not needed.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>DC</string>
                    </property>
@@ -80,6 +86,9 @@
                  </item>
                  <item>
                   <widget class="QRadioButton" name="mcconfTypeFocButton">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;FOC = Field oriented control.&lt;br/&gt;&lt;br/&gt;It is another control type for Brushless DC Motors. The Motor is very silent in this mode. But the downside is a bit reduced top speed. And it is absolutely necessary to have the right settings in this mode. Otherwise the VESC could be damaged quickly.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>FOC</string>
                    </property>
@@ -119,6 +128,9 @@
                     <layout class="QGridLayout" name="gridLayout_9">
                      <item row="3" column="0">
                       <widget class="QLabel" name="label_19">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Battery min&lt;/span&gt; = regulates the maximum negative (charge) Power and therewith the brake power at high speeds.&lt;br/&gt;&lt;br/&gt;Maximum is the maximum charge current rating of each cell x cells in parallel&lt;br/&gt;e.g for 10S4P pack&lt;br/&gt;4A x 4P = 16A&lt;br/&gt;&lt;br/&gt;If you have 2 or more VESCs you need to devide this value by the number of VESCs&lt;br/&gt;4A x 4P / 2VESCs = 8A&lt;br/&gt;&lt;br/&gt;This value should always be lower or equal to Motor min. And this value always starts with a minus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Batt min (regen)</string>
                        </property>
@@ -126,6 +138,9 @@
                      </item>
                      <item row="4" column="0">
                       <widget class="QLabel" name="label_20">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Absolute max&lt;/span&gt; = the maximum allowed current the VESC allows before it shuts down. &lt;br/&gt;&lt;br/&gt;Some spikes can occure which don't harm the VESC so this value is recommended to be at 130A. Maximum should be 160A, but with 130A it is a bit safer because there is some space to 160A.&lt;br/&gt;&lt;br/&gt;This value should always be higher than the motor max. Also with some Gap.&lt;br/&gt;e.g. Motor max = 80A and Absolute max = 130A&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Absolute max</string>
                        </property>
@@ -146,6 +161,15 @@
                      </item>
                      <item row="2" column="0">
                       <widget class="QLabel" name="label_18">
+                       <property name="toolTip">
+                        <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Battery max&lt;/span&gt; = regulates the max total Power and therewith the power at high speeds.&lt;br/&gt;&lt;br/&gt;Maximum is the maximum discharge current rating of each cell x cells in parallel&lt;br/&gt;e.g for 10S4P pack &lt;br/&gt;20A x 4P = 80A&lt;br/&gt;&lt;br/&gt;If you have 2 or more VESCs you need to devide this value by the number of VESCs&lt;br/&gt;20A x 4P / 2VESCs = 40A&lt;/p&gt;&lt;p&gt;The other limitations if this value would be if there is a fuse in the circuit which has a lower value or a BMS which doesn't allow higher discharge rates.&lt;/p&gt;&lt;p&gt;And of course if the power output at higher speeds is too much for you. Then you should lower this value.&lt;/p&gt;&lt;p&gt;This value should always be lower or equal to Motor min.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                       <property name="toolTipDuration">
+                        <number>-1</number>
+                       </property>
+                       <property name="whatsThis">
+                        <string/>
+                       </property>
                        <property name="text">
                         <string>Batt max</string>
                        </property>
@@ -153,6 +177,9 @@
                      </item>
                      <item row="1" column="0">
                       <widget class="QLabel" name="label_17">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Motor min&lt;/span&gt; = regulates the brake Power at low and mid speed.&lt;br/&gt;&lt;br/&gt;In current control you control the percentage of this value for braking. So for example at 25% brake throttle then 25% of this value will be send to the motor. &lt;br/&gt;&lt;br/&gt;The maximum value should be the maximum amps the motor can handle by the manufactures specification.&lt;br/&gt;&lt;br/&gt;E.g. Sk3 is rated o 80 A&lt;br/&gt;&lt;br/&gt;This value should always be higher or equal to Battery min. And this value always starts with a minus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Motor min (regen)</string>
                        </property>
@@ -193,6 +220,12 @@
                      </item>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_16">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Motor max&lt;/span&gt; = regulates the acceleration Power at low and mid speed.&lt;br/&gt;&lt;br/&gt;In current control you control this value with the throttle for acceleration. &lt;br/&gt;So for example at 25% throttle only 25% of this value will be used at the motor.&lt;br/&gt;&lt;br/&gt;The maximum value should be the maximum amps the motor can handle by the manufactures specification.&lt;br/&gt;&lt;br/&gt;e.g. Sk3 is rated to 80 A&lt;br/&gt;&lt;br/&gt;This value should always be higher or equal to Battery max&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                       <property name="toolTipDuration">
+                        <number>-1</number>
+                       </property>
                        <property name="text">
                         <string>Motor max</string>
                        </property>
@@ -210,8 +243,40 @@
                      </item>
                      <item row="5" column="0">
                       <widget class="QCheckBox" name="mcconfLimCurrentSlowAbsMaxBox">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Slow absolute max&lt;/span&gt; = When the current is higher than the &amp;quot;Absolute max&amp;quot; value then the VESC will shut down immediately. When Slow absolute max is enabled then it will shut down when that happens a couple of times. &lt;br/&gt;This way a single current spike that can occure doesn't cause the VESC to shut down immediately. &lt;br/&gt;&lt;br/&gt;It is recommended to enable this value&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Slow absolute max</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="0">
+                      <widget class="QCheckBox" name="mcconfUseMaxWattEnabled">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Use Max Wat&lt;/span&gt;t = This value regulates the max watts the VESC tries to achieve when the throttle is pulled 100%. This value needs to be set for each motor. By this you can also achieve different power outputs for the front and rear axle.&lt;br/&gt;&lt;br/&gt;If the throttle is only pulled 25% then the VESC only tries to achieve 25% of the watts. So if the value is at 1000 then this would be 250 watts.&lt;br/&gt;At 50% throttle it only tries to achieve 50% of the the watts. So if the value is at 1000 then this would be 500 watts.&lt;br/&gt;&lt;br/&gt;By this value you can adjust the power of your board very easy. You can also simply reduce it to like 250 watts and hand over the board to a unexperienced rider.&lt;br/&gt;&lt;br/&gt;Another advantage to set a max watt limit is that the baord will have the same power output at diffrent battery levels. As long as the Battery can achieve the power. So it is useful to set the Battery max to the maximum the Battery can handle and adjust the power output via the max watt value.&lt;br/&gt;&lt;br/&gt;Based on the motors &amp;quot;Battery max&amp;quot; you can calculate the maximum value that can be entered by 3,6V * battery cells in series * max battery amps&lt;br/&gt;e.g. for a 10S4P pack with 2 VESCs&lt;/p&gt;&lt;p&gt;3,6V * 10S * 40A = 1440&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                       <property name="text">
+                        <string>Use Max Watt (Only Watt control modes)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="1">
+                      <widget class="QDoubleSpinBox" name="mcconfLimWattsMaxBox">
+                       <property name="decimals">
+                        <number>0</number>
+                       </property>
+                       <property name="minimum">
+                        <double>0.000000000000000</double>
+                       </property>
+                       <property name="maximum">
+                        <double>5000.000000000000000</double>
+                       </property>
+                       <property name="singleStep">
+                        <double>10.000000000000000</double>
+                       </property>
+                       <property name="value">
+                        <double>0.000000000000000</double>
                        </property>
                       </widget>
                      </item>
@@ -236,6 +301,9 @@
                     <layout class="QGridLayout" name="gridLayout_10">
                      <item row="1" column="0">
                       <widget class="QLabel" name="label_21">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Min ERPM&lt;/span&gt; = maximum electronical RPMs when the VESC turns Backwards&lt;br/&gt;&lt;br/&gt;The should not be forced with more than 60000 ERPM, so set this value to -60000 to be safe.&lt;br/&gt;&lt;br/&gt;ERPM is calculated by rpm of the motor * Motor poles / 2&lt;br/&gt;e.g Sk3 has 14 poles and turns 1000 times a minute&lt;br/&gt;1000 * 14 / 2 = 7000 ERPM&lt;br/&gt;&lt;br/&gt;Max possible ERPM of your motor is 4,2V * cells in series * motor kv * motor poles / 2&lt;br/&gt;e.g. 10S4P fully charged, Sk3 190kv&lt;br/&gt;4,2V * 10S * 190 * 14 / 2 = 55860 ERPM&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Min ERPM</string>
                        </property>
@@ -276,6 +344,9 @@
                      </item>
                      <item row="2" column="0">
                       <widget class="QLabel" name="label_22">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Max ERPM&lt;/span&gt; = maximum electronical RPMs when the VESC turns Forward&lt;br/&gt;The should not be forced with more than 60000 ERPM, so set this value to 60000 to be safe.&lt;br/&gt;&lt;br/&gt;ERPM is calculated by rpm of the motor * Motor poles / 2&lt;br/&gt;e.g Sk3 has 14 poles and turns 1000 times a minute&lt;br/&gt;1000 * 14 / 2 = 7000 ERPM&lt;br/&gt;&lt;br/&gt;Max possible ERPM of your motor is 4,2V * cells in series * motor kv * motor poles / 2&lt;br/&gt;e.g. 10S4P fully charged, Sk3 190kv&lt;br/&gt;4,2V * 10S * 190 * 14 / 2 = 55860 ERPM&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Max ERPM</string>
                        </property>
@@ -283,6 +354,9 @@
                      </item>
                      <item row="3" column="0">
                       <widget class="QLabel" name="label_23">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Max ERPM at full brake&lt;/span&gt; = below this ERPM the VESC will make a full brake.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Max ERPM at full brake</string>
                        </property>
@@ -290,6 +364,9 @@
                      </item>
                      <item row="0" column="0">
                       <widget class="QCheckBox" name="mcconfLimErpmLimitNegTorqueBox">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Limit ERPM with negative tourqu&lt;/span&gt;e = When the max ERPM value is reached the VESC will start to brake if enabled.&lt;br/&gt;When disabled the VESC will only stop to output more power.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Limit ERPM with negative torque</string>
                        </property>
@@ -310,6 +387,9 @@
                      </item>
                      <item row="4" column="0">
                       <widget class="QLabel" name="label_62">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Max ERPM at full brake in current control mode&lt;/span&gt; = below this ERPM the VESC will make a full brake in Current control mode&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Max ERPM at full brake in current control mode</string>
                        </property>
@@ -338,6 +418,9 @@
                   <layout class="QGridLayout" name="gridLayout_23">
                    <item row="0" column="0">
                     <widget class="QLabel" name="label_57">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;MOSFET Start&lt;/span&gt; = at this temperature the VESC starts do reduce the power.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>MOSFET Start</string>
                      </property>
@@ -361,6 +444,9 @@
                    </item>
                    <item row="1" column="0">
                     <widget class="QLabel" name="label_58">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;MOSFET End&lt;/span&gt; = at this temperature the VESC shuts down the power completely.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>MOSFET End</string>
                      </property>
@@ -384,6 +470,9 @@
                    </item>
                    <item row="2" column="0">
                     <widget class="QLabel" name="label_59">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Not used at the moment&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Motor Start</string>
                      </property>
@@ -407,6 +496,9 @@
                    </item>
                    <item row="3" column="0">
                     <widget class="QLabel" name="label_60">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Not used at the moment&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Motor End</string>
                      </property>
@@ -441,6 +533,9 @@
                     <layout class="QGridLayout" name="gridLayout_11">
                      <item row="2" column="0">
                       <widget class="QLabel" name="label_86">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Battery cutoff start&lt;/span&gt; = voltage at which the VESC starts to reduce the power.&lt;br/&gt;This value is important when the board accelerates because then it draws power from the battery and by this the batterys voltage drops a bit. So the VESC will protect the battery so that it doesn't get discharged too much.&lt;/p&gt;&lt;p&gt;Braking is still possible with full power.&lt;br/&gt;&lt;br/&gt;For Li-Ion the recommended value is 3,0V and for LiPo it is 3,6V per cell.&lt;br/&gt;e.g. 10S4P Li-Ion&lt;br/&gt;3,0V * 10 cells in series = 30V&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Battery cutoff start</string>
                        </property>
@@ -448,6 +543,9 @@
                      </item>
                      <item row="1" column="0">
                       <widget class="QLabel" name="label_25">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Maximum input voltage&lt;/span&gt; = When the Voltage goes above this value the VESC will shut off. Recommended is 57 V.&lt;/p&gt;&lt;p&gt;Please set this value to 57 V even when your battery has way less volts.&lt;/p&gt;&lt;p&gt;Because when voltage spikes occur the voltage can go higher then your battery. So this value is there to protect the VESC which can handle 60V. So 57V gives a little bit of safety space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Maximum input voltage</string>
                        </property>
@@ -455,6 +553,9 @@
                      </item>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_24">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Minimum input voltage&lt;/span&gt; = When the Voltage goes below that value the VESC will shut off. Recommended is 8V.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Minimum input voltage</string>
                        </property>
@@ -488,6 +589,9 @@
                      </item>
                      <item row="3" column="0">
                       <widget class="QLabel" name="label_87">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Battery cutoff end&lt;/span&gt; = voltage at which the VESC starts to cutoff the power output.&lt;br/&gt;This value is important when the board accelerates because then it draws power from the battery and by this the batterys voltage drops a bit. So the VESC will protect the battery so that it doesn't get discharged lower than this value.&lt;br/&gt;&lt;br/&gt;Braking is still possible.&lt;br/&gt;&lt;br/&gt;For Li-Ion the recommended value is 2,8V and for LiPo it is 3,4V per cell.&lt;br/&gt;e.g. 10S4P Li-Ion&lt;br/&gt;2,8V * 10 cells in series = 28V&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Battery cutoff end</string>
                        </property>
@@ -520,15 +624,11 @@
                  <string>Other Limits</string>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_36">
-                 <item row="0" column="0" rowspan="2" colspan="2">
-                  <widget class="QLabel" name="label_83">
-                   <property name="text">
-                    <string>Minimum duty cycle</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="0" column="2" rowspan="2">
                   <widget class="QLabel" name="label_84">
+                   <property name="toolTip">
+                    <string/>
+                   </property>
                    <property name="text">
                     <string>Maximum duty cycle</string>
                    </property>
@@ -569,6 +669,13 @@
                    </property>
                   </widget>
                  </item>
+                 <item row="0" column="0" rowspan="2" colspan="2">
+                  <widget class="QLabel" name="label_83">
+                   <property name="text">
+                    <string>Minimum duty cycle</string>
+                   </property>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
               </item>
@@ -600,6 +707,9 @@
                 <layout class="QHBoxLayout" name="horizontalLayout_43">
                  <item>
                   <widget class="QRadioButton" name="mcconfSensorModeSensorlessButton">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sensorless&lt;/span&gt; = VESCs identifies the actual motor position by itself. In this mode the VESC has trouble to detect the motor position from a standstill. Once the motor is spinning the VESC can detect the position by itself. So you should always start with a little push.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>Sensorless</string>
                    </property>
@@ -610,6 +720,9 @@
                  </item>
                  <item>
                   <widget class="QRadioButton" name="mcconfSensorModeSensoredButton">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sensored&lt;/span&gt; = VESCs identifies the actual motor position by sensors. In this mode the VESC can start also from a standstill. At higher speeds the VESC works better without sensors. So sensors are mainly useful for very low speeds. It is better to use the Hybrid mode which runs in sensored mode at low speeds and switches off the sensors at high speeds.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>Sensored</string>
                    </property>
@@ -617,6 +730,9 @@
                  </item>
                  <item>
                   <widget class="QRadioButton" name="mcconfSensorModeHybridButton">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hybrid&lt;/span&gt; = Starts with sensor and switches to sensorless when the ERPM which are defined in &amp;quot;Sensorless ERPM (hybrid mode)&amp;quot; are reached&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>Hybrid</string>
                    </property>
@@ -927,6 +1043,9 @@
                    </item>
                    <item>
                     <widget class="QLabel" name="label_32">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sensorless ERPM (hybrid mode)&lt;/span&gt; = In Hybrid Sensor mode the VESC will switch from sensored to sensorless mode when the motors ERPM are above that value. Sensors are only needed at startup. Once the motor is spinning the VESC runs better without sensors.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Sensorless ERPM (hybrid mode)</string>
                      </property>
@@ -992,6 +1111,9 @@
                   <layout class="QGridLayout" name="gridLayout_47">
                    <item row="0" column="0">
                     <widget class="QPushButton" name="mcconfDetectMotorParamButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starts the motor detection for BLDC mode. The motor will try to detect the Integrator Limit, BEMF Coupling and the Hall sensors (sensors only if available and conected).&lt;br/&gt;Once the detection finished press the apply button below and you can see that the mentioned values will change.&lt;br/&gt;Afterwards press &amp;quot;write configuration&amp;quot; to store the values.&lt;br/&gt;If you have 2 VESCs you have to do this as well for the second VESC&lt;br/&gt;&lt;br/&gt;ATTENTION: The remote needs to be disabled in the Application Tab. Otherwise the motor detection gets disturbed.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Start detection</string>
                      </property>
@@ -1036,6 +1158,9 @@
                    </item>
                    <item row="1" column="0">
                     <widget class="QLabel" name="label_44">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If the motor spins up to a decent speed but the detection still fails then raise this value.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Min ERPM</string>
                      </property>
@@ -1043,6 +1168,9 @@
                    </item>
                    <item row="1" column="1">
                     <widget class="QDoubleSpinBox" name="mcconfDetectErpmBox">
+                     <property name="toolTip">
+                      <string/>
+                     </property>
                      <property name="decimals">
                       <number>1</number>
                      </property>
@@ -1072,6 +1200,9 @@
                    </item>
                    <item row="2" column="1">
                     <widget class="QDoubleSpinBox" name="mcconfDetectLowDutyBox">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If the motor spins up to a decent speed but the detection still fails then raise this value.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="maximum">
                       <double>0.400000000000000</double>
                      </property>
@@ -1085,6 +1216,9 @@
                    </item>
                    <item row="0" column="0">
                     <widget class="QLabel" name="label_43">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If the motor runs too slow during detection raise this value until the motor runs at a decent speed. Only necessary when you have very big motors.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Current</string>
                      </property>
@@ -1104,8 +1238,8 @@
                     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Detection results will be printed here.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;Detection results will be printed here.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -1139,6 +1273,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="2" column="0">
                     <widget class="QLabel" name="label_89">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;These values are detected automatically during FOC motor detection.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Current Control</string>
                      </property>
@@ -1172,6 +1309,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="4" column="0">
                     <widget class="QLabel" name="label_92">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;These values are detected automatically durin encoder detection. Only needed when a encoder sensor is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Encoder</string>
                      </property>
@@ -1196,6 +1336,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="5" column="3">
                     <widget class="QCheckBox" name="mcconfFocEncoderInvertedBox">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Invert Encoder = only when Encoder sensors are used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Invert Encoder</string>
                      </property>
@@ -1205,6 +1348,9 @@ p, li { white-space: pre-wrap; }
                     <layout class="QHBoxLayout" name="horizontalLayout_26">
                      <item>
                       <widget class="QRadioButton" name="mcconfFocModeEncoderButton">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Encoder&lt;/span&gt; = should be used when a Encoder sensor is attached to the motor. To detect the correct Encoder values you need to detect the values by the &amp;quot;Measure&amp;quot; Button below. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Encoder</string>
                        </property>
@@ -1215,6 +1361,9 @@ p, li { white-space: pre-wrap; }
                      </item>
                      <item>
                       <widget class="QRadioButton" name="mcconfFocModeHallButton">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hall&lt;/span&gt; = should be used when a hall sensors are attached to the motor. To detect the correct Hall sensor values you need to press the &amp;quot;Measure&amp;quot; Button below. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Hall</string>
                        </property>
@@ -1222,6 +1371,9 @@ p, li { white-space: pre-wrap; }
                      </item>
                      <item>
                       <widget class="QRadioButton" name="mcconfFocModeSensorlessButton">
+                       <property name="toolTip">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sensorless&lt;/span&gt; = use this mode when no sensors are attached to the motor. The VESC still works fine but you need to give the board a little push at startup.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
                        <property name="text">
                         <string>Sensorless</string>
                        </property>
@@ -1244,6 +1396,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="5" column="0">
                     <widget class="QLabel" name="label_96">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sensorless ERPM&lt;/span&gt; = the VESC will switch from sensored to sensorless mode when the motors ERPM are above that value. Sensores are only needed at startup. Onces the motor is spinning the VESC runs better without sensors.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Sensorless ERPM</string>
                      </property>
@@ -1347,7 +1502,7 @@ p, li { white-space: pre-wrap; }
                    <item row="4" column="1">
                     <widget class="QSpinBox" name="mcconfFocFSwBox">
                      <property name="toolTip">
-                      <string>Switching Frequency</string>
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Switching Frequency&lt;/p&gt;&lt;p&gt;If your motors perform bad in FOC mode after you made the motor detection then you can try to finetune it with this value and check the result in the &amp;quot;Current Plot&amp;quot;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                      </property>
                      <property name="suffix">
                       <string> Hz</string>
@@ -1397,6 +1552,9 @@ p, li { white-space: pre-wrap; }
                 </item>
                 <item row="1" column="0">
                  <widget class="QGroupBox" name="groupBox_40">
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Motor Parameters (for Sensorless and Hall Operation)&lt;/span&gt; = all these values are detected automatically during FOC motor detection&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
                   <property name="title">
                    <string>Motor Parameters (for Sensorless and Hall Operation)</string>
                   </property>
@@ -1413,6 +1571,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="4" column="0">
                     <widget class="QLabel" name="label_98">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Observer Gain (x1M)&lt;/span&gt; = gets calculated by the &amp;quot;Calc (Req: L)&amp;quot; Button to the right. Please do a FOC motor detection first because the value gets calculated by the L value above.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Observer Gain (x1M)</string>
                      </property>
@@ -1582,6 +1743,9 @@ p, li { white-space: pre-wrap; }
               </item>
               <item>
                <widget class="QGroupBox" name="groupBox_46">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hall Sensors&lt;/span&gt; = gets automatically detected by the Hall sensor detection&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="title">
                  <string>Hall Sensors</string>
                 </property>
@@ -1683,11 +1847,14 @@ p, li { white-space: pre-wrap; }
               </item>
               <item>
                <widget class="QGroupBox" name="groupBox_44">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Detect and Calculate Parameters&lt;/span&gt; = to detect the right parameters for FOC you need to do a motor detection. Press the Buttons in the order of the red numbers. The two Measure processes need a little time. So just wait for 30 seconds after you pressed one of those Buttons.&lt;/p&gt;&lt;p&gt;When the last &amp;quot;Apply&amp;quot; Button is pressed you need to press the &amp;quot;Write configuration&amp;quot; Button to write the values to the VESC.&lt;br/&gt;&lt;br/&gt;ATTENTION: The remote needs to be disabled in the Application Tab. Otherwise the motor detection gets disturbed.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="title">
                  <string>Detect and Calculate Parameters</string>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_45">
-                 <item row="0" column="4">
+                 <item row="0" column="5">
                   <spacer name="horizontalSpacer_29">
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
@@ -1700,7 +1867,7 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </spacer>
                  </item>
-                 <item row="3" column="1">
+                 <item row="3" column="2">
                   <widget class="QDoubleSpinBox" name="mcconfFocCalcCCTcBox">
                    <property name="prefix">
                     <string>TC: </string>
@@ -1722,7 +1889,7 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="0">
+                 <item row="2" column="1">
                   <widget class="QPushButton" name="mcconfFocMeasureLinkageButton">
                    <property name="toolTip">
                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Spin up the motor using BLDC delay commutation and measure the flux linkage. The motor resistance is required to compensate for load, so it should be measured or entered first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1732,7 +1899,7 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="0">
+                 <item row="0" column="1">
                   <widget class="QPushButton" name="mcconfFocMeasureRLButton">
                    <property name="toolTip">
                     <string>Measure the motor resistance and inductance.</string>
@@ -1742,7 +1909,7 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="1">
+                 <item row="0" column="2">
                   <widget class="QDoubleSpinBox" name="mcconfFocDetectRBox">
                    <property name="prefix">
                     <string>R: </string>
@@ -1761,7 +1928,7 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="2">
+                 <item row="0" column="3">
                   <widget class="QDoubleSpinBox" name="mcconfFocDetectLBox">
                    <property name="prefix">
                     <string>L: </string>
@@ -1774,14 +1941,14 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="5">
+                 <item row="0" column="7">
                   <widget class="QPushButton" name="mcconfFocApplyRLLambdaButton">
                    <property name="text">
                     <string>Apply</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="0">
+                 <item row="3" column="1">
                   <widget class="QPushButton" name="mcconfFocCalcCCButton">
                    <property name="toolTip">
                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Calculate Kp and Ki for the current control loop based on the motor resistance and inductance, and a desired time constant (TC) of the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1791,14 +1958,14 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="5">
+                 <item row="3" column="7">
                   <widget class="QPushButton" name="mcconfFocCalcCCApplyButton">
                    <property name="text">
                     <string>Apply</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="3">
+                 <item row="0" column="4">
                   <widget class="QDoubleSpinBox" name="mcconfFocDetectLinkageBox">
                    <property name="readOnly">
                     <bool>true</bool>
@@ -1820,7 +1987,7 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="3">
+                 <item row="3" column="4">
                   <widget class="QDoubleSpinBox" name="mcconfFocCalcKiBox">
                    <property name="readOnly">
                     <bool>true</bool>
@@ -1833,7 +2000,7 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="2">
+                 <item row="3" column="3">
                   <widget class="QDoubleSpinBox" name="mcconfFocCalcKpBox">
                    <property name="readOnly">
                     <bool>true</bool>
@@ -1852,7 +2019,7 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="1">
+                 <item row="2" column="2">
                   <widget class="QDoubleSpinBox" name="mcconfFocDetectCurrentBox">
                    <property name="toolTip">
                     <string>For measuring flux linkage:  The current to use.</string>
@@ -1871,7 +2038,7 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="2">
+                 <item row="2" column="3">
                   <widget class="QDoubleSpinBox" name="mcconfFocDetectDutyBox">
                    <property name="toolTip">
                     <string>For measuring flux linkage:  Duty cycle to measure flux linkage at.</string>
@@ -1890,7 +2057,7 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="3">
+                 <item row="2" column="4">
                   <widget class="QDoubleSpinBox" name="mcconfFocDetectMinRpmBox">
                    <property name="toolTip">
                     <string>For measuring flux linkage: The minimum RPM to start the motor with.</string>
@@ -1912,10 +2079,45 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="4" colspan="2">
+                 <item row="2" column="5" colspan="3">
                   <widget class="QLabel" name="label_93">
                    <property name="text">
                     <string>← To spin up for λ</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_108">
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;1.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="label_109">
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;2.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="label_111">
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;3.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="6">
+                  <widget class="QLabel" name="label_112">
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;4.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="6">
+                  <widget class="QLabel" name="label_114">
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;5.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -1924,6 +2126,9 @@ p, li { white-space: pre-wrap; }
               </item>
               <item>
                <widget class="QGroupBox" name="groupBox_42">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Detect Hall Sensors&lt;/span&gt; = to tdetect the encoder press the &amp;quot;Measure&amp;quot; Button and when the detection was successful press the apply button to the right. Afterwards you need press the &amp;quot;Write configuration&amp;quot; Button to write the settings to the VESC.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="title">
                  <string>Detect Encoder</string>
                 </property>
@@ -2028,6 +2233,9 @@ p, li { white-space: pre-wrap; }
               </item>
               <item>
                <widget class="QGroupBox" name="groupBox_45">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Detect Hall Sensors&lt;/span&gt; = to detect the hall sensors press the &amp;quot;Measure&amp;quot; Button and when the detection was successful press the apply button to the right. Afterwards you need press the &amp;quot;Write configuration&amp;quot; Button to write the settings to the VESC.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="title">
                  <string>Detect Hall Sensors</string>
                 </property>
@@ -2213,6 +2421,9 @@ p, li { white-space: pre-wrap; }
                   <layout class="QGridLayout" name="gridLayout_14">
                    <item row="0" column="0">
                     <widget class="QLabel" name="label_34">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Startup boost (BLDC only)&lt;/span&gt; = gives you an extra push at very low speeds. If you are very heavy or you use small motors and the VESC has trouble at low speeds this might help. But raise it slowly by incremens of 0.01&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Startup boost (BLDC only)</string>
                      </property>
@@ -2233,6 +2444,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="1" column="0">
                     <widget class="QLabel" name="label_35">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Min current&lt;/span&gt; = the minimum current the VESC will use, if the value is lower than this then the VESC will change to idle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Min current</string>
                      </property>
@@ -2244,7 +2458,7 @@ p, li { white-space: pre-wrap; }
                    <item row="2" column="0">
                     <widget class="QLabel" name="label_36">
                      <property name="toolTip">
-                      <string>Only change this if you know what you are doing</string>
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Gain (BLDC and DC only)&lt;/span&gt; = That is the maximum allowed gain of current with each calculation step. It increases or decreases the reaction time of the VESC to throttle changes. Higher value = faster power output change, lower value = slower power output change.&lt;br/&gt;&lt;br/&gt;Only change this if you know what you are doing. This is very sensitive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                      </property>
                      <property name="text">
                       <string>Gain (BLDC and DC only)</string>
@@ -2297,6 +2511,9 @@ p, li { white-space: pre-wrap; }
                   <layout class="QGridLayout" name="gridLayout_37">
                    <item row="0" column="0">
                     <widget class="QLabel" name="label_3">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Duty ramp step (at 1kHz)&lt;/span&gt; = That is the maximum allowed gain of duty cycle with each calculation step (1000 steps per seconds). It increases or decreases the reaction time of the VESC to throttle changes. Higher value = faster power output change, lower value = slower power output change.&lt;br/&gt;&lt;br/&gt;Only change this if you know what you are doing. This is very sensitive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Duty ramp step (at 1 kHz)</string>
                      </property>
@@ -2314,6 +2531,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="1" column="0">
                     <widget class="QLabel" name="label_69">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Max current ramp step (at 1 kHz) = &lt;/span&gt;limits the max ramp step that got caculated. No ramp step higher than this value is allowed for each step.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Max current ramp step (at 1 kHz)</string>
                      </property>
@@ -2334,6 +2554,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="2" column="0">
                     <widget class="QLabel" name="label_85">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Current backoff gain &lt;/span&gt;= when the VESC reaches limits this is the maximum allowed reduction gain per step that is allowed. Works like Gain but the other way to reduce the power when a limit is reached.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Current backoff gain</string>
                      </property>
@@ -2351,6 +2574,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="3" column="0">
                     <widget class="QLabel" name="label_33">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Speed limit ramp step &lt;/span&gt;= maximum allowed reduction ramp step when the maximum allowed ERPM speed is reached.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Speed limit ramp step</string>
                      </property>
@@ -2387,6 +2613,9 @@ p, li { white-space: pre-wrap; }
                   <layout class="QGridLayout" name="gridLayout_15">
                    <item row="0" column="0">
                     <widget class="QLabel" name="label_37">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Used to calculate the power output during speed control. Of you want to know more google &amp;quot;PID controller&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>KP</string>
                      </property>
@@ -2404,6 +2633,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="1" column="0">
                     <widget class="QLabel" name="label_38">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Used to calculate the power output during speed control. Of you want to know more google &amp;quot;PID controller&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>KI</string>
                      </property>
@@ -2421,6 +2653,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="2" column="0">
                     <widget class="QLabel" name="label_39">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Used to calculate the power output during speed control. Of you want to know more google &amp;quot;PID controller&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>KD</string>
                      </property>
@@ -2438,6 +2673,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="3" column="0">
                     <widget class="QLabel" name="label_40">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;MIN ERPM&lt;/span&gt; = Speed control (cruise control) only works above this ERPM speed.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>MIN ERPM</string>
                      </property>
@@ -2450,6 +2688,16 @@ p, li { white-space: pre-wrap; }
                      </property>
                      <property name="singleStep">
                       <double>100.000000000000000</double>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="1">
+                    <widget class="QCheckBox" name="mcconfSpidBreakingEnabled">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Braking allowed&lt;/span&gt; = When enabled then the VESC will brake when the speed in cruise control is higher than allowed. When disabled the VESC simply stops the power output.&lt;br/&gt;If you like to use the cruise control to keep the same speed when you go downhill then you should enable braking.&lt;/p&gt;&lt;p&gt;If you like to carve and don't want that the VESC constantly brakes and accelerates while you carve you should disable it.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Disabled is recommended.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string>Braking allowed for Speed Controller</string>
                      </property>
                     </widget>
                    </item>
@@ -2470,6 +2718,9 @@ p, li { white-space: pre-wrap; }
                   <layout class="QGridLayout" name="gridLayout_26">
                    <item row="0" column="0">
                     <widget class="QLabel" name="label_68">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Used to calculate the power output during position control. Of you want to know more google &amp;quot;PID controller&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>KP</string>
                      </property>
@@ -2487,6 +2738,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="1" column="0">
                     <widget class="QLabel" name="label_70">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Used to calculate the power output during speed control. Of you want to know more google &amp;quot;PID controller&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>KI</string>
                      </property>
@@ -2504,6 +2758,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="2" column="0">
                     <widget class="QLabel" name="label_71">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Used to calculate the power output during speed control. Of you want to know more google &amp;quot;PID controller&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>KD</string>
                      </property>
@@ -2749,6 +3006,9 @@ p, li { white-space: pre-wrap; }
                   <layout class="QGridLayout" name="gridLayout_29">
                    <item row="0" column="0">
                     <widget class="QLabel" name="label_65">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Controller ID &lt;/span&gt;= When you use multiple VESCs via Uart you need to give each VESC a unique ID. You should set the MASTER to 0 and then start from 1 upwards.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Controller ID</string>
                      </property>
@@ -2766,6 +3026,9 @@ p, li { white-space: pre-wrap; }
                 </item>
                 <item>
                  <widget class="QGroupBox" name="appconfSendCanStatusBox">
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Send status over CAN&lt;/span&gt; = Only activate it for slave VESCs that are connected with the master via CAN. &lt;br/&gt;&lt;br/&gt;For the Master it should be disabled. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
                   <property name="title">
                    <string>Send status over CAN</string>
                   </property>
@@ -2778,6 +3041,9 @@ p, li { white-space: pre-wrap; }
                   <layout class="QGridLayout" name="gridLayout_25">
                    <item row="0" column="0">
                     <widget class="QLabel" name="label_12">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rate (Hz)&lt;/span&gt; = Leave this at 500, no reason to change it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Rate (Hz)</string>
                      </property>
@@ -2797,6 +3063,9 @@ p, li { white-space: pre-wrap; }
               </item>
               <item>
                <widget class="QGroupBox" name="groupBox_18">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you change the App you have to write the settings and reboot the VESC.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="title">
                  <string>App to use (Changing this requires a reboot)</string>
                 </property>
@@ -2805,6 +3074,9 @@ p, li { white-space: pre-wrap; }
                   <layout class="QGridLayout" name="gridLayout_22">
                    <item row="1" column="0">
                     <widget class="QRadioButton" name="appconfUseUartButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Via UART (Serial RX TX) you can create a communication to a Bluetooth module or a Arduino.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>UART</string>
                      </property>
@@ -2812,6 +3084,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="1" column="1">
                     <widget class="QRadioButton" name="appconfUsePpmUartButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a PPM remote and UART (serial) modules at the same time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>PPM and UART</string>
                      </property>
@@ -2826,6 +3101,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="0" column="0">
                     <widget class="QRadioButton" name="appconfUseNoAppButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Application is switched off.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>No app</string>
                      </property>
@@ -2843,6 +3121,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="2" column="0">
                     <widget class="QRadioButton" name="appconfUseNunchukButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If your remote is a Wii Nunchuk&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Nunchuk</string>
                      </property>
@@ -2850,6 +3131,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="0" column="1">
                     <widget class="QRadioButton" name="appconfUsePpmButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is used for RC car remotes. A view examples are the GT2B, Mini Remote, Nano-X, Benchwheel and Steez remote. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>PPM</string>
                      </property>
@@ -2895,6 +3179,9 @@ p, li { white-space: pre-wrap; }
                 <layout class="QGridLayout" name="gridLayout_18">
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_52">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Timeout (ms)&lt;/span&gt; = When no signal was received from the remote then the VESC will start to brake with the brake current that is defined below.&lt;br/&gt;&lt;br/&gt;Recommended is to leave it at 1000ms and set the brake current to 0 so that you don't get thrown off the board.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>Timeout (ms)</string>
                    </property>
@@ -2957,6 +3244,9 @@ p, li { white-space: pre-wrap; }
                   <layout class="QGridLayout" name="gridLayout_13">
                    <item row="0" column="2">
                     <widget class="QRadioButton" name="appconfPpmDutyNorevButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Duty cycle no reverse&lt;/span&gt;= you control the duty cycle of the VESC with the remote. So you are in control of the Voltage that will be used for the motor. No reverse means it will only spin formward and not backward.&lt;br/&gt;&lt;br/&gt;Not recommended.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Duty cycle no reverse</string>
                      </property>
@@ -2964,6 +3254,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="0" column="1">
                     <widget class="QRadioButton" name="appconfPpmDutyButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Duty cycle&lt;/span&gt; = you control the duty cycle of the VESC with the remote. So you are in control of the Voltage that will be used for the motor.&lt;br/&gt;&lt;br/&gt;Not recommended.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Duty cycle</string>
                      </property>
@@ -2981,6 +3274,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="1" column="3">
                     <widget class="QRadioButton" name="appconfPpmPidNorevButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;PID speed control no reverse&lt;/span&gt;= you control the the speed of the motor with this mode. The VESC tries always to reach exactly the speed you set via the throttle.&lt;br/&gt;&lt;br/&gt;Not recommended&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>PID speed control no reverse</string>
                      </property>
@@ -2988,6 +3284,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="1" column="1">
                     <widget class="QRadioButton" name="appconfPpmCurrentNorevBrakeButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Current no reverse with brake = you control the the Motor max amps with the remote. This results an a relatively even acceleration when the throttle stays the same.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Current no reverse with brake</string>
                      </property>
@@ -2995,6 +3294,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="0" column="3">
                     <widget class="QRadioButton" name="appconfPpmCurrentButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Current&lt;/span&gt; = you control the the Motor max amps with the remote. This results an a relatively even acceleration when the throttle stays the same. In this mode the VESC can also drive backwards.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Current</string>
                      </property>
@@ -3005,6 +3307,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="1" column="0">
                     <widget class="QRadioButton" name="appconfPpmCurrentNorevButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Current&lt;/span&gt; = you control the the Motor max amps with the remote. This results an a relatively even acceleration. When the throttle is at full brake the VESC will idle. When it is at full acceleration it will give full power.&lt;br/&gt;&lt;br/&gt;Not Recommended.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Current no reverse</string>
                      </property>
@@ -3012,8 +3317,51 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item row="1" column="2">
                     <widget class="QRadioButton" name="appconfPpmPidButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;PID speed control&lt;/span&gt; = you control the the speed of the motor with this mode. The VESC tries always to reach exactly the speed you set via the throttle.&lt;br/&gt;&lt;br/&gt;Not recommended&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>PID speed control</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="3">
+                    <widget class="QRadioButton" name="appconfPpmCruiseControlSecondaryChannel">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Cruise Control via Secondary Channel&lt;/span&gt; = Should only be used for the salve VESC. Connect the steering channel of the RC remote to the slave VESC and adjust the Pulsewith settings.&lt;br/&gt;&lt;br/&gt;The slave VESC needs to send it's status via CAN which can be activated in the &amp;quot;General&amp;quot; Tab. &lt;br/&gt;&lt;br/&gt;When the steering of the remote is hold to left or right during riding then the VESC activates the Cruise Control when the Throttle is in Idle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string>Cruise Control via Secondary Channel</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="2">
+                    <widget class="QRadioButton" name="appconfPpmPIDNoAccelerationButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;PID speed control no acceleration &lt;/span&gt;= in this mode the VESC doesn't accelerate. When the throttle is pulled then the VESC only keeps it's actual speed. The max power output is limited to the max watts value.&lt;br/&gt;&lt;br/&gt;Braking is still possible. In some countrys this mode maybe legalizes the board. It also is the mode that needs the least power because of the missing acceleration.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string>PID speed control no acceleration</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QRadioButton" name="appconfPpmWattNorevBrakeButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Watt no reverse with brake&lt;/span&gt; = with the throttle you control the motors power output (watts). The maximu reachable watts are calculated by the &amp;quot;Battery max&amp;quot; parameter and the actual battery voltage.&lt;br/&gt;&lt;br/&gt;In this mode the VESC can also drive backwards.&lt;br/&gt;&lt;br/&gt;If you have a 10S battery (3.6V * 10S = 36V) and batter max is set to 30A then the max watts would be 1080 Watts. When the voltage sags under load then the maximum reachable watts are constantly caculated.&lt;br/&gt;&lt;br/&gt;If the maximum reachable watts is 1000 watts then &lt;br/&gt;100% throtle will reuslt in 1000 watts&lt;br/&gt;75 % throttle will reulst in 750 watts &lt;br/&gt;25% throttle will reuslt in 250 watts.&lt;br/&gt;&lt;br/&gt;The VESC tries to reach the watts at any speed. At slow speeds the VESC ramps up the same way as in current control until it reaches the watts.&lt;br/&gt;&lt;br/&gt;Braking behavior is the same as in &amp;quot;Current no reverse with brake&amp;quot;.&lt;br/&gt;&lt;br/&gt;In this mode the board is better controllable especialy at higher speeds because the full throttle range is usable at any speed.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string>Watt no reverse with brake</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QRadioButton" name="appconfPpmWattButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Watt &lt;/span&gt;(with reverse) = with the throttle you control the motors power output (watts). The maximu reachable watts are calculated by the &amp;quot;Battery max&amp;quot; parameter and the actual battery voltage.&lt;br/&gt;&lt;br/&gt;In this mode the VESC can also drive backwards.&lt;br/&gt;&lt;br/&gt;If you have a 10S battery (3.6V * 10S = 36V) and batter max is set to 30A then the max watts would be 1080 Watts. When the voltage sags under load then the maximum reachable watts are constantly caculated.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;If the maximum reachable watts is 1000 watts then &lt;br/&gt;100% throtle will reuslt in 1000 watts&lt;br/&gt;75 % throttle will reulst in 750 watts &lt;br/&gt;25% throttle will reuslt in 250 watts.&lt;br/&gt;&lt;br/&gt;The VESC tries to reach the watts at any speed. At slow speeds the VESC ramps up the same way as in current control until it reaches the watts.&lt;br/&gt;&lt;br/&gt;Braking behavior is the same as in &amp;quot;Current&amp;quot;.&lt;br/&gt;&lt;br/&gt;In this mode the board is better controllable especialy at higher speeds because the full throttle range is usable at any speed.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string>Watt</string>
                      </property>
                     </widget>
                    </item>
@@ -3037,63 +3385,222 @@ p, li { white-space: pre-wrap; }
               </item>
               <item>
                <widget class="QGroupBox" name="groupBox_20">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="title">
                  <string>Settings</string>
                 </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
                 <layout class="QGridLayout" name="gridLayout_17">
-                 <item row="4" column="0">
-                  <widget class="QCheckBox" name="appconfPpmMedianFilterBox">
-                   <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a median filter to reject niose. This will introduce one sample delay.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                   <property name="text">
-                    <string>Use Median Filter</string>
-                   </property>
+                 <item row="6" column="4">
+                  <widget class="QComboBox" name="positivePPMCruiseControlDropDown">
+                   <item>
+                    <property name="text">
+                     <string>(+) Use Motor Settings</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>(+) Braking disabled</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>(+) Braking enabled</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>(+) No Cruise</string>
+                    </property>
+                   </item>
                   </widget>
                  </item>
-                 <item row="3" column="0">
-                  <widget class="QLabel" name="label_51">
-                   <property name="text">
-                    <string>Maximum Pulsewidth (ms)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QDoubleSpinBox" name="appconfPpmPidMaxErpmBox">
-                   <property name="maximum">
-                    <double>200000.000000000000000</double>
-                   </property>
-                   <property name="singleStep">
-                    <double>100.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
+                 <item row="1" column="1">
                   <widget class="QLabel" name="label_49">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Deadband&lt;/span&gt; = This is a offset of the PPM signal before the VESC reacts on inputs from the throttle signal. The higher the more you have to push the throttle before the VESC reacts. Adjust it until it fits your needs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>Deadband</string>
                    </property>
                   </widget>
                  </item>
                  <item row="2" column="1">
-                  <widget class="QDoubleSpinBox" name="appconfPpmPulseStartBox">
-                   <property name="maximum">
-                    <double>10.000000000000000</double>
-                   </property>
-                   <property name="singleStep">
-                    <double>0.100000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
                   <widget class="QLabel" name="label_50">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Minimum Pulsewidth (ms)&lt;/span&gt; = Set this to the value that you see in the display box when you make a full brake.&lt;br/&gt;&lt;br/&gt;To find a good setting for that value you can also use the auto wizard.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>Minimum Pulsewidth (ms)</string>
                    </property>
                   </widget>
                  </item>
                  <item row="3" column="1">
+                  <widget class="QLabel" name="label_110">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Center Pulsewidth (ms)&lt;/span&gt; = Set this to the value that you see in the display box when you don't touch the throttle (Idle).&lt;br/&gt;&lt;br/&gt;To find a good setting for that value you can also use the auto wizard.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Center Pulsewidth (ms)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QLabel" name="label_51">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Maximum Pulsewidth (ms)&lt;/span&gt; = Set this to the value that you see in the display box when you pull the throttle completely (full acceleration).&lt;br/&gt;&lt;br/&gt;To find a good setting for that value you can also use the auto wizard.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Maximum Pulsewidth (ms)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="1">
+                  <widget class="QCheckBox" name="appconfPpmMedianFilterBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a median filter to reject noise. This will introduce one sample delay.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Use Median Filter</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="label_45">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;PID max ERPM&lt;/span&gt; = Maximum allowed ERPM speed. Is especially needed for PID control mode. So when the throttle is pulled 100% then this is the Speed the VESC tries to reach.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>PID max ERPM</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="1">
+                  <widget class="QCheckBox" name="appconfPpmSafeStartBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Don't give throttle unless the received output has been 0 for at least 50 pulses. The counter is reset on boot, every time a new configuration is loaded and when a timeout occurs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Safe Start</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="3">
+                  <widget class="QComboBox" name="negativePPMCruiseControlDropDown">
+                   <item>
+                    <property name="text">
+                     <string>(-) Use Motor Settings</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>(-) Braking disabled</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>(-) Braking enabled</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>(-) No Cruise</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="6" column="2">
+                  <widget class="QLabel" name="label_115">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Here you can adjust if it is allowed for the Cruise Control to brake or not when you steer left or right with the steering channel. This needs to be setup at the slave where the Control mode &amp;quot;Cruise Control via Secondary Channel&amp;quot; is activated. You can also use the parameter in the motor settings advanced tab or disable the cruise functionality for one side if you only have a button instead of a steering.&lt;br/&gt;&lt;br/&gt;You need to check in the Display below if the Pulsewith becomes higher or lower when you steer to a side. When it becomes lower then you can adjust it with the negative (-) value. If it becomes higher you can adjust it with the positive (+) value.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::LeftToRight</enum>
+                   </property>
+                   <property name="text">
+                    <string>Cruise Control ( neg / pos )</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="3" colspan="2">
+                  <widget class="QPushButton" name="ppmSignalAutoWizard">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starts the auto wizard to identify the PPM settings. Follow the instructions. &lt;br/&gt;It is recommended to set the control mode to disabled first and write the setting before you start the wizard. this way you avoid that the motor starts to spin during detection. But it also works when the motor is spinning.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Start auto wizard</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="3" colspan="2">
                   <widget class="QDoubleSpinBox" name="appconfPpmPulseWidthBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
                    <property name="maximum">
                     <double>20.000000000000000</double>
                    </property>
@@ -3102,15 +3609,73 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_45">
-                   <property name="text">
-                    <string>PID max ERPM</string>
+                 <item row="3" column="3" colspan="2">
+                  <widget class="QDoubleSpinBox" name="appconfPpmPulseCenterBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="maximum">
+                    <double>10.000000000000000</double>
+                   </property>
+                   <property name="singleStep">
+                    <double>0.100000000000000</double>
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="1">
+                 <item row="2" column="3" colspan="2">
+                  <widget class="QDoubleSpinBox" name="appconfPpmPulseStartBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="maximum">
+                    <double>10.000000000000000</double>
+                   </property>
+                   <property name="singleStep">
+                    <double>0.100000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="3" colspan="2">
                   <widget class="QDoubleSpinBox" name="appconfPpmHystBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
                    <property name="maximum">
                     <double>1.000000000000000</double>
                    </property>
@@ -3119,13 +3684,51 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="5" column="0">
-                  <widget class="QCheckBox" name="appconfPpmSafeStartBox">
-                   <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Don't give throttle unless the received output has been 0 for at leas 50 pulses. The counter is reset on boot, every time a new configuration is loaded and when a timeout occurs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <item row="0" column="3" colspan="2">
+                  <widget class="QDoubleSpinBox" name="appconfPpmPidMaxErpmBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
                    </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="maximum">
+                    <double>200000.000000000000000</double>
+                   </property>
+                   <property name="singleStep">
+                    <double>100.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="8" column="3" colspan="2">
+                  <widget class="QDoubleSpinBox" name="appconfPpmMaxErpmDirBox">
+                   <property name="minimum">
+                    <double>1.000000000000000</double>
+                   </property>
+                   <property name="maximum">
+                    <double>200000.000000000000000</double>
+                   </property>
+                   <property name="singleStep">
+                    <double>100.000000000000000</double>
+                   </property>
+                   <property name="value">
+                    <double>4000.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="8" column="1" colspan="2">
+                  <widget class="QCheckBox" name="appconfPpmMaxErpmDirActive">
                    <property name="text">
-                    <string>Safe Start</string>
+                    <string>Enable maximum ERPM for direction switch (Watt and Current with reverse)</string>
                    </property>
                   </widget>
                  </item>
@@ -3134,8 +3737,11 @@ p, li { white-space: pre-wrap; }
               </item>
               <item>
                <widget class="QGroupBox" name="appconfPpmRpmLimBox">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Soft RPM limit (current and watt mode only)&lt;/span&gt; = this is the best way to limit your maximum speed.&lt;br/&gt;&lt;br/&gt;If you want to reduce it then it is highly recommended to do it here and not via the Motor configuration.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="title">
-                 <string>Soft RPM limit (current mode only)</string>
+                 <string>Soft RPM limit (current and watt mode only)</string>
                 </property>
                 <property name="checkable">
                  <bool>true</bool>
@@ -3156,6 +3762,9 @@ p, li { white-space: pre-wrap; }
                  </item>
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_47">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ERPM limit start&lt;/span&gt; = When this speed is reached the VESC starts to reduce the power.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>ERPM limit start</string>
                    </property>
@@ -3163,6 +3772,9 @@ p, li { white-space: pre-wrap; }
                  </item>
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_48">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ERPM limit start&lt;/span&gt; = When this speed is reached the VESC stops the power output. &lt;br/&gt;&lt;br/&gt;100% correct would be that the VESC reduces the current to the minimum current which is adjusted in the &amp;quot;Advanced&amp;quot; Motor Tab. But realistically it is very close to no power. Only when you test the motor on the bench then the motor might can spin faster than this value if it is set very low.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>ERPM limit end</string>
                    </property>
@@ -3183,6 +3795,9 @@ p, li { white-space: pre-wrap; }
               </item>
               <item>
                <widget class="QGroupBox" name="appconfPpmMultiGroup">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Multiple ESCs over CAN&lt;/span&gt; = When multiple VESCs are connected via CAN then the master will send the actual current to all Slave VESCs. Only the master needs this activated.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="title">
                  <string>Multiple ESCs over CAN</string>
                 </property>
@@ -3192,39 +3807,9 @@ p, li { white-space: pre-wrap; }
                 <property name="checked">
                  <bool>false</bool>
                 </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_37">
-                 <item>
-                  <widget class="QCheckBox" name="appconfPpmTcBox">
-                   <property name="text">
-                    <string>Enable Traction Control (current mode only)</string>
-                   </property>
-                   <property name="checked">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <spacer name="horizontalSpacer_14">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>40</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_67">
-                   <property name="text">
-                    <string>Traction Control ERPM diff</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QDoubleSpinBox" name="appconfPpmTcErpmBox">
+                <layout class="QGridLayout" name="gridLayout_99">
+                 <item row="0" column="3">
+                  <widget class="QDoubleSpinBox" name="appconfPpmTcOffsetBox">
                    <property name="maximum">
                     <double>100000.000000000000000</double>
                    </property>
@@ -3233,11 +3818,75 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
+                 <item row="0" column="2">
+                  <widget class="QLabel" name="label_200">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Offset diff&lt;/span&gt; = As long as the ERPM difference between the VESCs in the system is not higher than this value the traction control will do nothing.&lt;br/&gt;&lt;br/&gt;Value of 3000 is recommended. if set lower the traction control could disturb your carving.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Offset diff</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QCheckBox" name="appconfPpmTcBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Enable Traction Control (current and watt mode) &lt;/span&gt;= When the traction control is enabled then the VESCs will adjust their power to the slowest VESC in the system. This way a wheel that loses contact to the ground doesn't spin up fast and cause trouble when it touches the ground again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Enable Traction Control (current and watt mode)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QLabel" name="label_67">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Traction Control ERPM diff &lt;/span&gt;= between the offset and this value the VESC reduces the power of the wheel that spins this much ERPM faster than the slowest wheel. Above that value this VESCs power will be reduced almost comletely until it is slower again.&lt;br/&gt;&lt;br/&gt;Value of 5000 is recommended.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Traction Control ERPM diff</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="3">
+                  <widget class="QDoubleSpinBox" name="appconfPpmTcErpmBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximum">
+                    <double>100000.000000000000000</double>
+                   </property>
+                   <property name="value">
+                    <double>5000.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
               </item>
               <item>
                <widget class="QGroupBox" name="appconfUpdatePpmBox">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Display&lt;/span&gt; = Activate it to see the actual throttle signal from the remote. &lt;br/&gt;&lt;br/&gt;When you don't touch the remote it should be at 50%. &lt;br/&gt;&lt;br/&gt;When you pull the throttle 100 % then the value should be 100%. &lt;br/&gt;&lt;br/&gt;When you brake 100% then the value should be 0%.&lt;br/&gt;&lt;br/&gt;In the box to the right you can see the pulsewith signals that you need for the minimum, center and maximum Pulsewith settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="title">
                  <string>Display</string>
                 </property>
@@ -3245,7 +3894,7 @@ p, li { white-space: pre-wrap; }
                  <bool>true</bool>
                 </property>
                 <property name="checked">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_19">
                  <item row="0" column="0">
@@ -3281,6 +3930,9 @@ p, li { white-space: pre-wrap; }
                <spacer name="verticalSpacer_6">
                 <property name="orientation">
                  <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Expanding</enum>
                 </property>
                 <property name="sizeHint" stdset="0">
                  <size>
@@ -3574,10 +4226,10 @@ p, li { white-space: pre-wrap; }
                     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;The cruise control button will maintain the current speed while pressed when current control is used and no throttle is given. The reverse button is used to reverse the throttle when one of the corresponding control modes is used.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;When only the ADC app is used, the TX pin is used for the cruise control button and the RX pin is used for the reverse button. When the ADC and UART apps are used at the same time, the servo input will be used as the button. In this case it will be used for the reverse button when a control mode with button is selected, otherwise it will be used for the cruise control button.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;The cruise control button will maintain the current speed while pressed when current control is used and no throttle is given. The reverse button is used to reverse the throttle when one of the corresponding control modes is used.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;When only the ADC app is used, the TX pin is used for the cruise control button and the RX pin is used for the reverse button. When the ADC and UART apps are used at the same time, the servo input will be used as the button. In this case it will be used for the reverse button when a control mode with button is selected, otherwise it will be used for the cruise control button.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -3794,6 +4446,9 @@ p, li { white-space: pre-wrap; }
                 <layout class="QGridLayout" name="gridLayout_16">
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_46">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Baud rate needs to be the same as the Baud rate of the connected module. &lt;br/&gt;&lt;br/&gt;9600 is recommended.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>Baud rate</string>
                    </property>
@@ -3852,6 +4507,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item>
                     <widget class="QRadioButton" name="appconfChukCurrentNorevButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Current = you control the the Motor max amps with the remote. This results an a relatively even acceleration when the throttle stays the same.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Current</string>
                      </property>
@@ -3859,8 +4517,31 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item>
                     <widget class="QRadioButton" name="appconfChukCurrentButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Current with reverse&lt;/span&gt; = you control the the Motor max amps with the remote. This results an a relatively even acceleration. This results an a relatively even acceleration when the throttle stays the same. In this mode the VESC can also drive backwards.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
                      <property name="text">
                       <string>Current with reverse</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="appconfChukWattNorevButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Watt&lt;/span&gt; = with the throttle you control the motors power output (watts). &lt;br/&gt;If max watt is set to 1000 watts then &lt;br/&gt;100% throtle will reuslt in 1000 watts&lt;br/&gt;75 % throttle will reulst in 750 watts &lt;br/&gt;25% throttle will reuslt in 250 watts.&lt;br/&gt;&lt;br/&gt;The VESC tries to reach the watts at any speed. At slow speeds the VESC ramps up the same way as in current control until it reaches the watts.&lt;br/&gt;&lt;br/&gt;Braking behavior is the same as in &amp;quot;Current no reverse with brake&amp;quot;.&lt;br/&gt;&lt;br/&gt;In this mode the board is better controllable especialy at higher speeds because the full throttle range is usable at any speed.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string>Watt</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="appconfChukWattButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Watt with reverse&lt;/span&gt; = with the throttle you control the motors power output (watts). &lt;br/&gt;If max watt is set to 1000 watts then &lt;br/&gt;100% throtle will reuslt in 1000 watts&lt;br/&gt;75 % throttle will reulst in 750 watts &lt;br/&gt;25% throttle will reuslt in 250 watts.&lt;br/&gt;&lt;br/&gt;The VESC tries to reach the watts at any speed. At slow speeds the VESC ramps up the same way as in current control until it reaches the watts.&lt;br/&gt;&lt;br/&gt;Braking behavior is the same as in &amp;quot;Current no reverse with brake&amp;quot;.&lt;br/&gt;&lt;br/&gt;In this mode the board is better controllable especialy at higher speeds because the full throttle range is usable at any speed. In this mode the Vesc can also drive backwards&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string>Watt with reverse</string>
                      </property>
                     </widget>
                    </item>
@@ -3894,93 +4575,11 @@ p, li { white-space: pre-wrap; }
                  <string>Settings</string>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_21">
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_54">
-                   <property name="text">
-                    <string>Deadband</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QDoubleSpinBox" name="appconfChukHystBox">
-                   <property name="maximum">
-                    <double>1.000000000000000</double>
-                   </property>
-                   <property name="singleStep">
-                    <double>0.050000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="2">
-                  <widget class="QLabel" name="label_63">
-                   <property name="text">
-                    <string>Positive ramping time constant</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="3">
-                  <widget class="QDoubleSpinBox" name="appconfChukRampTimePosBox">
-                   <property name="singleStep">
-                    <double>0.100000000000000</double>
-                   </property>
-                   <property name="value">
-                    <double>1.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QLabel" name="label_56">
-                   <property name="text">
-                    <string>ERPM limit start</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="1">
-                  <widget class="QDoubleSpinBox" name="appconfChukRpmLimStartBox">
-                   <property name="maximum">
-                    <double>200000.000000000000000</double>
-                   </property>
-                   <property name="singleStep">
-                    <double>100.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="2">
-                  <widget class="QLabel" name="label_64">
-                   <property name="text">
-                    <string>Negative ramping time constant</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="3">
-                  <widget class="QDoubleSpinBox" name="appconfChukRampTimeNegBox">
-                   <property name="singleStep">
-                    <double>0.100000000000000</double>
-                   </property>
-                   <property name="value">
-                    <double>0.500000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QLabel" name="label_55">
-                   <property name="text">
-                    <string>ERPM limit end</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="1">
-                  <widget class="QDoubleSpinBox" name="appconfChukRpmLimEndBox">
-                   <property name="maximum">
-                    <double>200000.000000000000000</double>
-                   </property>
-                   <property name="singleStep">
-                    <double>100.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="2" column="2">
                   <widget class="QLabel" name="label_88">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ERPM/S input in cruise control&lt;/span&gt; = Maximum ERPM change per second&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>ERPM/S input in cruise control</string>
                    </property>
@@ -4002,6 +4601,113 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_54">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Deadband&lt;/span&gt; = This is a offset of the Nunchuk signal before the VESC reacts on inputs. The higher the more you have to push the Nunchuk stick  before the VESC reacts. Adjust it until it fits your needs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Deadband</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QDoubleSpinBox" name="appconfChukHystBox">
+                   <property name="maximum">
+                    <double>1.000000000000000</double>
+                   </property>
+                   <property name="singleStep">
+                    <double>0.050000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QLabel" name="label_63">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Positive ramping time constant&lt;/span&gt; = ramping for acceleration&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Positive ramping time constant</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QDoubleSpinBox" name="appconfChukRampTimePosBox">
+                   <property name="singleStep">
+                    <double>0.100000000000000</double>
+                   </property>
+                   <property name="value">
+                    <double>1.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="label_56">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ERPM limit start&lt;/span&gt; = When this speed is reached the VESC starts to reduce the power.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>ERPM limit start</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QDoubleSpinBox" name="appconfChukRpmLimStartBox">
+                   <property name="maximum">
+                    <double>200000.000000000000000</double>
+                   </property>
+                   <property name="singleStep">
+                    <double>100.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QLabel" name="label_64">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Negative ramping time constant&lt;/span&gt; = ramping for deceleration&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Negative ramping time constant</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="3">
+                  <widget class="QDoubleSpinBox" name="appconfChukRampTimeNegBox">
+                   <property name="singleStep">
+                    <double>0.100000000000000</double>
+                   </property>
+                   <property name="value">
+                    <double>0.500000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="label_55">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ERPM limit start&lt;/span&gt; = When this speed is reached the VESC stops the power output. &lt;br/&gt;&lt;br/&gt;100% correct would be that the VESC reduces the current to the minimum currect which is adjusted in the Advanced Tab. But realistically it is very close to no power. Only when you test the motor on the bench then you might can spin faster than thos value if it is set very low.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>ERPM limit end</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QDoubleSpinBox" name="appconfChukRpmLimEndBox">
+                   <property name="maximum">
+                    <double>200000.000000000000000</double>
+                   </property>
+                   <property name="singleStep">
+                    <double>100.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QCheckBox" name="checkBoxMirrorButtons">
+                   <property name="text">
+                    <string>Mirror C and Z Button</string>
+                   </property>
+                  </widget>
+                 </item>
                 </layout>
                 <zorder>label_56</zorder>
                 <zorder>appconfChukRpmLimStartBox</zorder>
@@ -4015,19 +4721,32 @@ p, li { white-space: pre-wrap; }
                 <zorder>appconfChukRampTimeNegBox</zorder>
                 <zorder>label_88</zorder>
                 <zorder>appconfChukErpmPerSBox</zorder>
+                <zorder>checkBoxMirrorButtons</zorder>
                </widget>
               </item>
               <item>
                <widget class="QGroupBox" name="appconfChukMultiGroup">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Multiple ESCs over CAN&lt;/span&gt; = When multiple VESCs are connected via CAN then the master will send the actual current to all Slave VESCs. Only the master needs this activated.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="title">
                  <string>Multiple ESCs over CAN</string>
                 </property>
                 <property name="checkable">
                  <bool>true</bool>
                 </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_36">
-                 <item>
+                <property name="checked">
+                 <bool>false</bool>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_100">
+                 <item row="0" column="0">
                   <widget class="QCheckBox" name="appconfChukTcBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Enable Traction Control &lt;/span&gt;= When the traction control is enabled then the VESCs will adjust their power to the slowest VESC in the system. This way a wheel that looses contact to the ground doesn't spin up fast and cause trouble when it touches the ground again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>Enable Traction Control</string>
                    </property>
@@ -4036,27 +4755,37 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item>
-                  <spacer name="horizontalSpacer_13">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="label_210">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Offset diff&lt;/span&gt; = As long as the ERPM difference between the VESCs in the system is not higher than this value the traction control will do nothing.&lt;br/&gt;&lt;br/&gt;Value of 3000 is recommended. if set lower the traction control could disturb your carving.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>40</width>
-                     <height>20</height>
-                    </size>
+                   <property name="text">
+                    <string>Offset diff</string>
                    </property>
-                  </spacer>
+                  </widget>
                  </item>
-                 <item>
+                 <item row="0" column="2">
+                  <widget class="QDoubleSpinBox" name="appconfChukTcOffsetBox">
+                   <property name="maximum">
+                    <double>100000.000000000000000</double>
+                   </property>
+                   <property name="value">
+                    <double>1000.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
                   <widget class="QLabel" name="label_66">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Traction Control ERPM diff &lt;/span&gt;= between the offset and this value the VESC reduces the power of the wheel that spins this much ERPM faster than the slowest wheel. Above that value this VESCs power will be reduced almost comletely until it is slower again.&lt;br/&gt;&lt;br/&gt;Value of 5000 is recommended.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>Traction Control ERPM diff</string>
                    </property>
                   </widget>
                  </item>
-                 <item>
+                 <item row="1" column="2">
                   <widget class="QDoubleSpinBox" name="appconfChukTcErpmBox">
                    <property name="maximum">
                     <double>100000.000000000000000</double>
@@ -4071,6 +4800,9 @@ p, li { white-space: pre-wrap; }
               </item>
               <item>
                <widget class="QGroupBox" name="appconfUpdateChukBox">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Display&lt;/span&gt; = Activate it to see the actual throttle signal from the remote. &lt;br/&gt;&lt;br/&gt;When you don't touch the remote it should be at 50%. &lt;br/&gt;&lt;br/&gt;When you pull the throttle 100 % then the value should be 100%. &lt;br/&gt;&lt;br/&gt;When you brake 100% then the value should be 0%.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="title">
                  <string>Display</string>
                 </property>
@@ -4106,16 +4838,16 @@ p, li { white-space: pre-wrap; }
                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;This has been tested with the wireless Nyko Kama nunchuk. The receiver can be connected directly to the I2C port on the ESC. The y-axis on the joystick is used for acceleration/braking. The buttons have the following functions:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;C-Button:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Cruise control. If the C-button is pressed, the ESC will maintail the current speed with a PID control loop. The joystick can still be used to accelerate and brake, but as soon as it is returned to the center position the new speed will be maintained, as long as the C-button remains pressed.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Z-Button:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;The Z-button is used to change the direction of the motor if reverse is activated. Without reverse, Z has no effect.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;There is also a safety function. If nothing received from the nunchuk (including the accelerometers) changes for longer than the timeout value in the &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt;General&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; tab, the timeout function will be activated and either release the motor or brake with the current specified next to the timeout value.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;This has been tested with the wireless Nyko Kama nunchuk. The receiver can be connected directly to the I2C port on the ESC. The y-axis on the joystick is used for acceleration/braking. The buttons have the following functions:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:600;&quot;&gt;C-Button: (Mirrored Z)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;Cruise control. If the C-button is pressed, the ESC will maintail the current speed with a PID control loop. The joystick can still be used to accelerate and brake, but as soon as it is returned to the center position the new speed will be maintained, as long as the C-button remains pressed.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:600;&quot;&gt;Z-Button: (Mirrored C)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;The Z-button is used to change the direction of the motor if reverse is activated. Without reverse, Z has no effect.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;There is also a safety function. If nothing received from the nunchuk (including the accelerometers) changes for longer than the timeout value in the &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt; font-style:italic;&quot;&gt;General&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt; tab, the timeout function will be activated and either release the motor or brake with the current specified next to the timeout value.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                </widget>
               </item>
@@ -4485,6 +5217,513 @@ p, li { white-space: pre-wrap; }
                  </size>
                 </property>
                </spacer>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tab_100">
+             <attribute name="title">
+              <string>Throttle-Curve</string>
+             </attribute>
+             <layout class="QVBoxLayout" name="verticalLayout_100">
+              <item>
+               <widget class="QGroupBox" name="groupBox_211">
+                <property name="title">
+                 <string>Throttle Curve</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_161">
+                 <item row="0" column="0">
+                  <widget class="QCustomPlot" name="throttleCurvePlot" native="true">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="appconfAdjustableThrottle">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="title">
+                 <string>Enable Throttle Curve</string>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+                <property name="checked">
+                 <bool>false</bool>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_48">
+                 <item row="0" column="1">
+                  <widget class="QGroupBox" name="groupBox_53">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="title">
+                    <string>Enable Acceleration Throttle Curve</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>false</bool>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_51">
+                    <item row="0" column="0" rowspan="3">
+                     <layout class="QGridLayout" name="gridLayout_52">
+                      <item row="1" column="3">
+                       <widget class="QDoubleSpinBox" name="x3Throttle">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>1.500000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>99.500000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>75.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="3">
+                       <widget class="QDoubleSpinBox" name="y3Throttle">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>0.000000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>100.000000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>75.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="1">
+                       <widget class="QDoubleSpinBox" name="x1Throttle">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>98.500000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>25.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="2">
+                       <widget class="QDoubleSpinBox" name="y2Throttle">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>0.000000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>100.000000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>50.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="2">
+                       <widget class="QDoubleSpinBox" name="x2Throttle">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>1.000000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>99.000000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>50.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="1">
+                       <widget class="QDoubleSpinBox" name="y1Throttle">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>0.000000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>100.000000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>25.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="0">
+                       <widget class="QLabel" name="label_102">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>Y - Power %</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0">
+                       <widget class="QLabel" name="label_106">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>X - Throttle %</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="1">
+                       <widget class="QDoubleSpinBox" name="bezierReduceFactorBox">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>0.000000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>1.000000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.050000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>1.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="label_113">
+                        <property name="text">
+                         <string>Edgesharpness Factor</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QGroupBox" name="groupBox_54">
+                   <property name="title">
+                    <string>Braking Throttle Curve</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>false</bool>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_56">
+                    <item row="0" column="0" rowspan="3">
+                     <layout class="QGridLayout" name="gridLayout_62">
+                      <item row="0" column="0">
+                       <widget class="QLabel" name="label_302">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>Y - Power %</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="label_313">
+                        <property name="text">
+                         <string>Edgesharpness Factor</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0">
+                       <widget class="QLabel" name="label_306">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>X - Throttle %</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="3">
+                       <widget class="QDoubleSpinBox" name="x1NegThrottle">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>-98.500000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>-0.500000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>-25.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="3">
+                       <widget class="QDoubleSpinBox" name="y1NegThrottle">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>-100.000000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>0.000000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>-25.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="1">
+                       <widget class="QDoubleSpinBox" name="x3NegThrottle">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>-99.500000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>-1.500000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>-75.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="1">
+                       <widget class="QDoubleSpinBox" name="y3NegThrottle">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>-100.000000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>0.000000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>-75.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="2">
+                       <widget class="QDoubleSpinBox" name="y2NegThrottle">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>-100.000000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>0.000000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>-50.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="2">
+                       <widget class="QDoubleSpinBox" name="x2NegThrottle">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>-99.000000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>-1.000000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.500000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>-50.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="1">
+                       <widget class="QDoubleSpinBox" name="bezierNegReduceFactorBox">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="decimals">
+                         <number>1</number>
+                        </property>
+                        <property name="minimum">
+                         <double>0.000000000000000</double>
+                        </property>
+                        <property name="maximum">
+                         <double>1.000000000000000</double>
+                        </property>
+                        <property name="singleStep">
+                         <double>0.050000000000000</double>
+                        </property>
+                        <property name="value">
+                         <double>1.000000000000000</double>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -5624,11 +6863,17 @@ p, li { white-space: pre-wrap; }
     </item>
     <item>
      <widget class="QWidget" name="widget2" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout_26">
        <item>
         <widget class="QToolBox" name="toolBox">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -5641,8 +6886,8 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>248</width>
-            <height>82</height>
+            <width>214</width>
+            <height>69</height>
            </rect>
           </property>
           <attribute name="label">
@@ -5652,7 +6897,7 @@ p, li { white-space: pre-wrap; }
            <item row="0" column="0" colspan="2">
             <widget class="QComboBox" name="serialCombobox">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -5690,8 +6935,8 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>248</width>
-            <height>82</height>
+            <width>214</width>
+            <height>69</height>
            </rect>
           </property>
           <attribute name="label">
@@ -5699,7 +6944,14 @@ p, li { white-space: pre-wrap; }
           </attribute>
           <layout class="QGridLayout" name="gridLayout_50">
            <item row="0" column="0">
-            <widget class="QLineEdit" name="udpIpEdit"/>
+            <widget class="QLineEdit" name="udpIpEdit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
            </item>
            <item row="1" column="0">
             <widget class="QPushButton" name="udpConnectButton">
@@ -6205,6 +7457,7 @@ p, li { white-space: pre-wrap; }
   <tabstop>mcconfCcGainBox</tabstop>
   <tabstop>mcconfSpidKiBox</tabstop>
   <tabstop>mcconfSpidMinRpmBox</tabstop>
+  <tabstop>mcconfSpidBreakingEnabled</tabstop>
   <tabstop>mcconfSpidKdBox</tabstop>
   <tabstop>mcconfSpidKpBox</tabstop>
   <tabstop>mcconfPpidKiBox</tabstop>
@@ -6238,18 +7491,15 @@ p, li { white-space: pre-wrap; }
   <tabstop>appconfPpmCurrentButton</tabstop>
   <tabstop>appconfPpmCurrentNorevButton</tabstop>
   <tabstop>appconfPpmPidButton</tabstop>
-  <tabstop>appconfPpmMedianFilterBox</tabstop>
+  <tabstop>appconfPpmCruiseControlSecondaryChannel</tabstop>
   <tabstop>appconfPpmPidMaxErpmBox</tabstop>
   <tabstop>appconfPpmPulseStartBox</tabstop>
   <tabstop>appconfPpmPulseWidthBox</tabstop>
   <tabstop>appconfPpmHystBox</tabstop>
+  <tabstop>appconfPpmMedianFilterBox</tabstop>
   <tabstop>appconfPpmSafeStartBox</tabstop>
   <tabstop>appconfPpmRpmLimBox</tabstop>
   <tabstop>appconfPpmRpmLimStartBox</tabstop>
-  <tabstop>appconfPpmRpmLimEndBox</tabstop>
-  <tabstop>appconfPpmMultiGroup</tabstop>
-  <tabstop>appconfPpmTcBox</tabstop>
-  <tabstop>appconfPpmTcErpmBox</tabstop>
   <tabstop>appconfUpdatePpmBox</tabstop>
   <tabstop>appconfAdcCurrentButtonButton</tabstop>
   <tabstop>appconfAdcDisabledButton</tabstop>
@@ -6272,6 +7522,8 @@ p, li { white-space: pre-wrap; }
   <tabstop>appconfChukDisabledButton</tabstop>
   <tabstop>appconfChukCurrentNorevButton</tabstop>
   <tabstop>appconfChukCurrentButton</tabstop>
+  <tabstop>appconfChukWattNorevButton</tabstop>
+  <tabstop>appconfChukWattButton</tabstop>
   <tabstop>appconfChukHystBox</tabstop>
   <tabstop>appconfChukRampTimePosBox</tabstop>
   <tabstop>appconfChukRpmLimStartBox</tabstop>

@@ -72,7 +72,7 @@ void RtDataWidget::paintEvent(QPaintEvent *event)
     pen.setColor(Qt::white);
     painter.setPen(pen);
     font.setPointSize(fs);
-    font.setFamily("Monospace");
+    font.setFamily("Courier New");
     painter.setFont(font);
     painter.drawText(QRectF(5, 5, box1_w, box_h), Qt::AlignLeft, str);
 
@@ -99,7 +99,7 @@ void RtDataWidget::paintEvent(QPaintEvent *event)
     pen.setColor(Qt::white);
     painter.setPen(pen);
     font.setPointSize(fs);
-    font.setFamily("Monospace");
+    font.setFamily("Courier New");
     painter.setFont(font);
     painter.drawText(QRectF(vidw -box2_w + 5, 5, box2_w, box_h), Qt::AlignLeft, str);
 }

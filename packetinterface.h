@@ -57,6 +57,7 @@ public:
     bool getAppConf();
     bool getAppConfDefault();
     bool setAppConf(const app_configuration &appconf);
+    bool setSpeedMode(ppm_control_type ppm_type);
     bool reboot();
     bool sendAlive();
     bool getDecodedPpm();

@@ -121,6 +121,7 @@ bool Serialization::writeMcconfXml(const mc_configuration &mcconf, QWidget *pare
     xmlwriter.writeTextElement("s_pid_ki", QString::number(mcconf.s_pid_ki));
     xmlwriter.writeTextElement("s_pid_kd", QString::number(mcconf.s_pid_kd));
     xmlwriter.writeTextElement("s_pid_min_rpm", QString::number(mcconf.s_pid_min_erpm));
+    xmlwriter.writeTextElement("s_pid_breaking_enabled", QString::number(mcconf.s_pid_breaking_enabled));
     xmlwriter.writeTextElement("p_pid_kp", QString::number(mcconf.p_pid_kp));
     xmlwriter.writeTextElement("p_pid_ki", QString::number(mcconf.p_pid_ki));
     xmlwriter.writeTextElement("p_pid_kd", QString::number(mcconf.p_pid_kd));
@@ -245,6 +246,7 @@ bool Serialization::readMcconfXml(mc_configuration &mcconf, QWidget *parent)
                     else if (xmlreader.name() == "s_pid_ki") {mcconf.s_pid_ki = xmlreader.readElementText().toDouble();}
                     else if (xmlreader.name() == "s_pid_kd") {mcconf.s_pid_kd = xmlreader.readElementText().toDouble();}
                     else if (xmlreader.name() == "s_pid_min_rpm") {mcconf.s_pid_min_erpm = xmlreader.readElementText().toDouble();}
+                    else if (xmlreader.name() == "s_pid_breaking_enabled") {mcconf.s_pid_breaking_enabled = xmlreader.readElementText().toInt();}
                     else if (xmlreader.name() == "p_pid_kp") {mcconf.p_pid_kp = xmlreader.readElementText().toDouble();}
                     else if (xmlreader.name() == "p_pid_ki") {mcconf.p_pid_ki = xmlreader.readElementText().toDouble();}
                     else if (xmlreader.name() == "p_pid_kd") {mcconf.p_pid_kd = xmlreader.readElementText().toDouble();}

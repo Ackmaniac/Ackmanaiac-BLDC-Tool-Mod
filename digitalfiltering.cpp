@@ -14,7 +14,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     */
-
+#define _USE_MATH_DEFINES
 #include "digitalfiltering.h"
 #include <math.h>
 #include <QDebug>
@@ -227,8 +227,10 @@ QVector<double> DigitalFiltering::filterSignal(const QVector<double> &signal, co
 QVector<double> DigitalFiltering::generateFirFilter(double f_break, int bits, bool useHamming)
 {
     int taps = 1 << bits;
-    double imag[taps];
-    double filter_vector[taps];
+    std::vector<double> imag(taps);
+    std::vector<double> filter_vector(taps);
+    //double imag[taps];
+    //double filter_vector[taps];
 
     for(int i = 0;i < taps;i++) {
         if (i < (int)((double)taps * f_break)) {
@@ -243,14 +245,22 @@ QVector<double> DigitalFiltering::generateFirFilter(double f_break, int bits, bo
         filter_vector[taps - i - 1] = filter_vector[i];
     }
 
-    fft(1, bits, filter_vector, imag);
-    fftshift(filter_vector, taps);
+    //fft(1, bits, filter_vector, imag);
+    //fftshift(filter_vector, taps);
+
+    //fft(1, bits, &filter_vector[0], &imag[0]);
+    //fftshift(&filter_vector[0], taps);
+
+    fft(1, bits, filter_vector.data(), imag.data());
+    fftshift(filter_vector.data(), taps);
 
     if (useHamming) {
-        hamming(filter_vector, taps);
+        //hamming(&filter_vector[0], taps);
+        hamming(filter_vector.data(), taps);
     }
 
     QVector<double> result;
+
     for(int i = 0;i < taps;i++) {
         result.append(filter_vector[i]);
     }
