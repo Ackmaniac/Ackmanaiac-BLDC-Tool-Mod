@@ -1,4 +1,6 @@
-A Qt gui to control and debug my custom BLDC controller. A complete description and tutorial about how to use it can be found here: http://vedder.se/2015/01/vesc-open-source-esc/
+A Qt gui to control and debug the the BLDC controller. 
+More information and tutorial about how to use it can be found here: http://vedder.se/2015/01/vesc-open-source-esc/
+and here https://www.electric-skateboard.builders/t/extended-bldc-tool-with-watt-control-mode-ppm-cruise-control-individual-throttle-curve-and-android-app/12286
 
 Quick build instructions for Ubuntu:
 
@@ -13,7 +15,3 @@ Quick build instructions for Ubuntu:
 5. Restart for access changes to take effect `sudo reboot now`
 
 6. Start BLDC-tool from inside of the built repo `./BLDC_Tool`
-
-Windows and OS X builds available :
-
-https://bldc-tool.support
